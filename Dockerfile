@@ -5,10 +5,6 @@ ENV DEBIAN_FRONTEND noninteractive
 
 WORKDIR /home/www
 
-RUN chown -Rf www.www /home/www \
-	&& chmod -Rf 755 /home/www \
-	&& chown -Rf 777 /home/www/storage
-
 RUN apt-key adv --keyserver pgp.mit.edu --recv-keys 573BFD6B3D8FBC641079A6ABABF5BD827BD9BF62
 RUN echo "deb http://nginx.org/packages/mainline/debian/ wheezy nginx" >> /etc/apt/sources.list.d/nginx.list
 
@@ -20,7 +16,6 @@ COPY conf.d/default.conf /etc/nginx/conf.d/default.conf
 # forward request and error logs to docker log collector
 RUN ln -sf /dev/stdout /var/log/nginx/access.log
 RUN ln -sf /dev/stderr /var/log/nginx/error.log
-
 
 VOLUME [$WORKDIR]
 
