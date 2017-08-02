@@ -17,15 +17,11 @@ COPY conf.d/default.conf /etc/nginx/conf.d/default.conf
 RUN ln -sf /dev/stdout /var/log/nginx/access.log
 RUN ln -sf /dev/stderr /var/log/nginx/error.log
 
-RUN mkdir ${WORKDIR} \
-	&& chown -Rf www.www ${WORKDIR} \
-	&& chmod -Rf 755 ${WORKDIR} \
-	&& chown -Rf 777 ${WORKDIR}/storage
+COPY start.sh /
+RUN chmod +x /start.sh
 
-VOLUME [${WORKDIR}]
+VOLUME [$WORKDIR]
 
 EXPOSE 443 80 9000
 
-CMD ["/run.sh"]
-
-CMD php-fpm && nginx -g "daemon off;"
+ENTRYPOINT ["/start.sh"]
