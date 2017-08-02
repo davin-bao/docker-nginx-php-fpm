@@ -23,4 +23,4 @@ EXPOSE 443 80 9000
 
 CMD ["/run.sh"]
 
-CMD php-fpm && nginx -g "daemon off;"
+CMD php-fpm && nginx
