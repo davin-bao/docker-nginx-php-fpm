@@ -20,7 +20,7 @@ RUN ln -sf /dev/stderr /var/log/nginx/error.log
 RUN mkdir $WORKDIR \
 	&& chown -Rf www.www $WORKDIR \
 	&& chmod -Rf 755 $WORKDIR \
-	&& chown -Rf 777 $WORKDIR/storage \
+	&& chown -Rf 777 $WORKDIR/storage
 
 VOLUME [$WORKDIR]
 
