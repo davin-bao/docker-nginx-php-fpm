@@ -5,8 +5,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 WORKDIR /home/www
 
-RUN mkdir /home/www \
-	&& chown -Rf www.www /home/www \
+RUN chown -Rf www.www /home/www \
 	&& chmod -Rf 755 /home/www \
 	&& chown -Rf 777 /home/www/storage
 
