@@ -9,6 +9,3 @@ if [ -f /home/www/storage ]; then
   chmod -Rf 777 /home/www/storage
 fi
 
-nohup /nginx.sh & 
-
-/phpfpm.sh
