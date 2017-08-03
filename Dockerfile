@@ -20,6 +20,12 @@ RUN ln -sf /dev/stderr /var/log/nginx/error.log
 COPY start.sh /
 RUN chmod +x /start.sh
 
+COPY nginx.sh /nginx.sh /
+RUN chmod +x /nginx.sh
+
+COPY phpfpm.sh /phpfpm.sh /
+RUN chmod +x /phpfpm.sh
+
 VOLUME [$WORKDIR]
 
 EXPOSE 443 80 9000

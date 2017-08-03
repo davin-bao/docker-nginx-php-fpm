@@ -5,10 +5,10 @@ if [ -f /home/www ]; then
   chmod -Rf 755 /home/www
 fi
 
-if [ -f /home/wwwstorage ]; then
+if [ -f /home/www/storage ]; then
   chmod -Rf 777 /home/www/storage
 fi
 
-nginx -g "daemon off;"
+nohup /nginx.sh & 
 
-php-fpm
+./phpfpm.sh
