@@ -20,11 +20,11 @@ RUN ln -sf /dev/stderr /var/log/nginx/error.log
 COPY start.sh /
 RUN chmod +x /start.sh
 
-COPY nginx.sh /nginx.sh /
-RUN chmod +x /nginx.sh
+COPY nginx.sh /bin/nginx.sh /
+RUN chmod +x /bin/nginx.sh
 
-COPY phpfpm.sh /phpfpm.sh /
-RUN chmod +x /phpfpm.sh
+COPY phpfpm.sh /bin/phpfpm.sh /
+RUN chmod +x /bin/phpfpm.sh
 
 VOLUME [$WORKDIR]
 
