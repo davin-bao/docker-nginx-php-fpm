@@ -10,4 +10,5 @@ if [ -f /home/www/storage ]; then
 fi
 
 cd / \
-&& /bin/phpfpm.sh
+&& /bin/phpfpm.sh \
+&& /bin/nginx.sh
