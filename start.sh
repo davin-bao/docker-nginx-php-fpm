@@ -11,4 +11,4 @@ fi
 
 nohup /nginx.sh & 
 
-./phpfpm.sh
+/phpfpm.sh
