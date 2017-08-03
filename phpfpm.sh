@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-php-fpm
+php-fpm -y /usr/local/etc/php-fpm.conf
